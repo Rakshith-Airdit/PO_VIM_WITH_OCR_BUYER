@@ -1,0 +1,24 @@
+{
+  "generationParameters": {
+    "generationDate": "Thu Sep 11 2025 10:23:33 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "SAP System (ABAP On-Premise)",
+    "metadataFilename": "",
+    "serviceUrl": "https://airdit-software-services-private-limite-airdit-190920236a7746bd.cfapps.ap10.hana.ondemand.com/odata/v2/po-vim-with-ocr-customer-side",
+    "appName": "po_vim_with_ocr_buyer",
+    "appTitle": "Supplier Invoice Management With OCR (Buyer)",
+    "appDescription": "An SAP Fiori application.",
+    "appNamespace": "com.povimwithocrbuyer",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.140.0",
+    "enableCodeAssist": false,
+    "enableEslint": false,
+    "enableTypeScript": false,
+    "showMockDataInfo": true,
+    "generatorVersion": "1.18.6",
+    "template": "Basic V2",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```"
+  }
+}
