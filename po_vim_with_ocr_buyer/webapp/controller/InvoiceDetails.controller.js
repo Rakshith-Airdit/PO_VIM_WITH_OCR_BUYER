@@ -220,7 +220,13 @@ sap.ui.define(
             method: "POST",
             success: (oRes) => {
               console.log(oRes);
-              MessageBox.success("Data Posted Successfully!!.", {
+
+              let successMessage =
+                sAction === "APPROVE"
+                  ? "Invoice Approved Successfully!"
+                  : "Invoice Rejected Successfully!";
+
+              MessageBox.success(successMessage, {
                 title: "Success",
                 actions: [MessageBox.Action.OK],
                 onClose: (sAction) => {
@@ -235,21 +241,22 @@ sap.ui.define(
             },
             error: (oErr) => {
               console.error(oErr);
-              MessageBox.error(
-                "Something went wrong while submitting the data!!.",
-                {
-                  title: "Error",
-                  actions: [MessageBox.Action.OK],
-                  onClose: (sAction) => {
-                    console.log("MessageBox closed with action:", sAction);
-                    if (sAction === MessageBox.Action.OK) {
-                      this.onClosePdf();
-                      const oRouter = this.getOwnerComponent().getRouter();
-                      oRouter.navTo("RouteInvoiceList");
-                    }
-                  },
-                }
-              );
+              let errorMessage =
+                sAction === "APPROVE"
+                  ? "Something went wrong while approving the invoice."
+                  : "Something went wrong while rejecting the invoice.";
+              MessageBox.error(errorMessage, {
+                title: "Error",
+                actions: [MessageBox.Action.OK],
+                onClose: (sAction) => {
+                  console.log("MessageBox closed with action:", sAction);
+                  if (sAction === MessageBox.Action.OK) {
+                    this.onClosePdf();
+                    const oRouter = this.getOwnerComponent().getRouter();
+                    oRouter.navTo("RouteInvoiceList");
+                  }
+                },
+              });
             },
           });
         },
@@ -368,11 +375,43 @@ sap.ui.define(
           }
 
           // Now, perform the status check
-          if (sStatus.includes("In-Process")) {
+          if (sStatus.toLowerCase().includes("in-process")) {
             return "Indication17";
           } else if (sStatus === "Approved") {
             return "Indication13";
           } else if (sStatus === "Rejected") {
+            return "Indication11";
+          }
+          return "None";
+        },
+
+        formatQtyMatchStatus: function (sStatus) {
+          // Check if sStatus is null or undefined
+          if (!sStatus) {
+            return "None"; // or any other default state like "Indication05"
+          }
+
+          // Now, perform the status check
+          if (sStatus.toLowerCase().includes("partially delivered")) {
+            return "Indication13";
+          } else if (sStatus === "Pass") {
+            return "Indication14";
+          } else if (sStatus === "Fail") {
+            return "Indication11";
+          }
+          return "None";
+        },
+
+        formatPriceMatchStatus: function (sStatus) {
+          // Check if sStatus is null or undefined
+          if (!sStatus) {
+            return "None"; // or any other default state like "Indication05"
+          }
+
+          // Now, perform the status check
+          if (sStatus === "Pass") {
+            return "Indication14";
+          } else if (sStatus === "Fail") {
             return "Indication11";
           }
           return "None";

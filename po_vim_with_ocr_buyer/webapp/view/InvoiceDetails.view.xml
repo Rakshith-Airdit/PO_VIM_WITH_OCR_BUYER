@@ -72,12 +72,12 @@
                         </m:HBox>
                     </snappedHeading>
                     <!-- <actions>
-                    <m:Button
-                        icon="sap-icon://history"
-                        text="Logs"
-                        press="onPressLogs"
-                    />
-                </actions> -->
+                        <m:Button
+                            icon="sap-icon://edit"
+                            text="Edit"
+                            press="onPressLogs"
+                        />
+                    </actions> -->
                 </ObjectPageDynamicHeaderTitle>
             </headerTitle>
 
@@ -261,12 +261,22 @@
                                                 </m:Column>
                                                 <m:Column width="auto">
                                                     <m:Text
+                                                        text="Invoice Quantity"
+                                                    />
+                                                </m:Column>
+                                                <m:Column width="auto">
+                                                    <m:Text
                                                         text="Invoiced Price"
                                                     />
                                                 </m:Column>
                                                 <m:Column width="auto">
                                                     <m:Text
                                                         text="Qty Match Status"
+                                                    />
+                                                </m:Column>
+                                                <m:Column width="auto">
+                                                    <m:Text
+                                                        text="Price Match Status"
                                                     />
                                                 </m:Column>
                                             </m:columns>
@@ -300,10 +310,20 @@
                                                             text="{oItemsModel>GRN_QUANTITY}"
                                                         />
                                                         <m:Text
-                                                            text="{oItemsModel>INVOICED_PRICE}"
+                                                            text="{oItemsModel>INVOICED_QUANTITY}"
                                                         />
                                                         <m:Text
+                                                            text="{oItemsModel>INVOICED_PRICE}"
+                                                        />
+                                                        <m:ObjectStatus
+                                                            inverted="true"
                                                             text="{oItemsModel>QTY_MATCH_STATUS}"
+                                                            state="{path: 'oItemsModel>QTY_MATCH_STATUS', formatter: '.formatQtyMatchStatus'}"
+                                                        />
+                                                        <m:ObjectStatus
+                                                            inverted="true"
+                                                            text="{oItemsModel>PRICE_MATCH_STATUS}"
+                                                            state="{path: 'oItemsModel>PRICE_MATCH_STATUS', formatter: '.formatPriceMatchStatus'}"
                                                         />
                                                     </m:cells>
                                                 </m:ColumnListItem>

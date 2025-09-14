@@ -20,6 +20,7 @@
                         <PropertyPath>INVOICE_NO</PropertyPath>
                         <PropertyPath>INVOICE_AMOUNT</PropertyPath>
                         <PropertyPath>PO_NUMBER</PropertyPath>
+                        <!-- <PropertyPath>SOURCE_TYPE</PropertyPath> -->
                     </Collection>
                 </Annotation>
                 <Annotation Term="UI.LineItem">
@@ -40,6 +41,10 @@
                             <PropertyValue Property="Value" Path="PO_NUMBER" />
                             <PropertyValue Property="Label" String="Purchase Order" />
                         </Record>
+                          <!-- <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SOURCE_TYPE" />
+                            <PropertyValue Property="Label" String="Source Type" />
+                        </Record> -->
                     </Collection>
                 </Annotation>
             </Annotations>
@@ -50,6 +55,7 @@
                         <PropertyPath>INVOICE_NO</PropertyPath>
                         <PropertyPath>INVOICE_AMOUNT</PropertyPath>
                         <PropertyPath>PO_NUMBER</PropertyPath>
+                        <!-- <PropertyPath>SOURCE_TYPE</PropertyPath> -->
                     </Collection>
                 </Annotation>
                 <Annotation Term="UI.LineItem">
@@ -71,6 +77,10 @@
                             <PropertyValue Property="Value" Path="PO_NUMBER" />
                             <PropertyValue Property="Label" String="Purchase Order" />
                         </Record>
+                         <!-- <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SOURCE_TYPE" />
+                            <PropertyValue Property="Label" String="Source Type" />
+                        </Record> -->
                     </Collection>
                 </Annotation>
             </Annotations>
@@ -81,6 +91,7 @@
                         <PropertyPath>INVOICE_NO</PropertyPath>
                         <PropertyPath>INVOICE_AMOUNT</PropertyPath>
                         <PropertyPath>PO_NUMBER</PropertyPath>
+                        <!-- <PropertyPath>SOURCE_TYPE</PropertyPath> -->
                     </Collection>
                 </Annotation>
                 <Annotation Term="UI.LineItem">
@@ -102,6 +113,10 @@
                             <PropertyValue Property="Value" Path="PO_NUMBER" />
                             <PropertyValue Property="Label" String="Purchase Order" />
                         </Record>
+                         <!-- <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SOURCE_TYPE" />
+                            <PropertyValue Property="Label" String="Source Type" />
+                        </Record> -->
                     </Collection>
                 </Annotation>
             </Annotations>
