@@ -301,6 +301,7 @@ sap.ui.define(
                 PO_NUMBER: PO_NUMBER || "",
                 INVOICE_AMOUNT: INVOICE_AMOUNT || "",
                 APPROVED_COMMENT: sComment || "",
+                REJECTED_COMMENT: sComment || "",
                 VENDOR_ADDRESS: VENDOR_ADDRESS || "",
                 BANK_ACCOUNT_NO: BANK_ACCOUNT_NO || "",
                 BANK_NAME: BANK_NAME || "",
