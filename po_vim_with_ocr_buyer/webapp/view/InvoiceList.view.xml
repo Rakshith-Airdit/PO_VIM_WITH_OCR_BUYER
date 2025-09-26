@@ -12,7 +12,7 @@
     >
         <content>
             <smartFilterBar:SmartFilterBar
-                id="idSmartFilterBar"
+                id="idSmartFilterBarPending"
                 class="sapContrastPlus"
                 entitySet="PendingTab"
                 persistencyKey="SmartFilter_Explored"
@@ -20,7 +20,7 @@
                 initialized="initialized"
                 showRestoreButton="true"
                 useToolbar="true"
-                visible="true"
+                visible="false"
                 showFilterConfiguration="false"
             >
                 <smartFilterBar:controlConfiguration>
@@ -35,6 +35,55 @@
                     />
                 </smartFilterBar:controlConfiguration>
             </smartFilterBar:SmartFilterBar>
+            <smartFilterBar:SmartFilterBar
+                id="idSmartFilterBarApproved"
+                class="sapContrastPlus"
+                entitySet="ApprovedTab"
+                persistencyKey="SmartFilter_Explored"
+                considerAnalyticalParameters="true"
+                initialized="initialized"
+                showRestoreButton="true"
+                useToolbar="true"
+                visible="false"
+                showFilterConfiguration="false"
+            >
+                <smartFilterBar:controlConfiguration>
+                    <smartFilterBar:ControlConfiguration
+                        id="configuration1"
+                        key="INVOICE_DATE"
+                        index="1"
+                        label="Invoice Date"
+                        visibleInAdvancedArea="true"
+                        filterType="single"
+                        conditionType="{ module: 'sap.ui.comp.config.condition.DateRangeType' }"
+                    />
+                </smartFilterBar:controlConfiguration>
+            </smartFilterBar:SmartFilterBar>
+            <smartFilterBar:SmartFilterBar
+                id="idSmartFilterBarRejected"
+                class="sapContrastPlus"
+                entitySet="RejectedTab"
+                persistencyKey="SmartFilter_Explored"
+                considerAnalyticalParameters="true"
+                initialized="initialized"
+                showRestoreButton="true"
+                useToolbar="true"
+                visible="false"
+                showFilterConfiguration="false"
+            >
+                <smartFilterBar:controlConfiguration>
+                    <smartFilterBar:ControlConfiguration
+                        id="configuration2"
+                        key="INVOICE_DATE"
+                        index="1"
+                        label="Invoice Date"
+                        visibleInAdvancedArea="true"
+                        filterType="single"
+                        conditionType="{ module: 'sap.ui.comp.config.condition.DateRangeType' }"
+                    />
+                </smartFilterBar:controlConfiguration>
+            </smartFilterBar:SmartFilterBar>
+
             <IconTabBar
                 selectedKey="__filter0"
                 id="idIconTabBar"
@@ -45,6 +94,7 @@
                         id="idPendingInvoices"
                         text="Pending"
                         icon="sap-icon://customer-history"
+                        key="PendingInvoices"
                     >
                         <content>
                             <smartTable:SmartTable
@@ -56,7 +106,7 @@
                                 enableAutoBinding="true"
                                 id="idPendingInvoicesTable"
                                 entitySet="PendingTab"
-                                smartFilterId="smartFilterBar"
+                                smartFilterId="idSmartFilterBarPending"
                                 persistencyKey="SmartTableHDRKey"
                                 enableExport="true"
                                 useVariantManagement="true"
@@ -65,6 +115,7 @@
                                 demandPopin="true"
                                 enableAutoColumnWidth="false"
                                 beforeExport="onBeforeExport"
+                                beforeRebindTable="onRebindPending"
                             >
                                 <!-- <smartTable:customToolbar>
                                     <OverflowToolbar>
@@ -150,6 +201,7 @@
                         text="Approved"
                         icon="sap-icon://task"
                         id="idApprovedInvoices"
+                        key="ApprovedInvoices"
                     >
                         <content>
                             <smartTable:SmartTable
@@ -161,7 +213,7 @@
                                 enableAutoBinding="true"
                                 id="idApprovedInvoicesTable"
                                 entitySet="ApprovedTab"
-                                smartFilterId="smartFilterBar"
+                                smartFilterId="idSmartFilterBarApproved"
                                 persistencyKey="SmartTableHDRKey"
                                 enableExport="true"
                                 useVariantManagement="true"
@@ -171,6 +223,7 @@
                                 enableAutoColumnWidth="false"
                                 beforeExport="onBeforeExport"
                                 busyIndicatorSize="Medium"
+                                beforeRebindTable="onRebindApp"
                             >
                                 <!-- <smartTable:customToolbar>
                                     <OverflowToolbar>
@@ -257,6 +310,7 @@
                         text="Rejected"
                         icon="sap-icon://employee-rejections"
                         id="idRejectedInvoices"
+                        key="RejectedInvoices"
                     >
                         <content>
                             <smartTable:SmartTable
@@ -268,7 +322,7 @@
                                 enableAutoBinding="true"
                                 id="idRejectedInvoicesTable"
                                 entitySet="RejectedTab"
-                                smartFilterId="smartFilterBar"
+                                smartFilterId="idSmartFilterBarRejected"
                                 persistencyKey="SmartTableHDRKey"
                                 enableExport="true"
                                 useVariantManagement="true"
@@ -276,6 +330,7 @@
                                 showRowCount="true"
                                 demandPopin="true"
                                 enableAutoColumnWidth="false"
+                                beforeRebindTable="onRebindRej"
                                 beforeExport="onBeforeExport"
                             >
                                 <!-- <smartTable:customToolbar>

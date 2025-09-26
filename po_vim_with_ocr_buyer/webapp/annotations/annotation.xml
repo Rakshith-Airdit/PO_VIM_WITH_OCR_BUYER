@@ -33,10 +33,10 @@
                             <PropertyValue Property="Value" Path="INVOICE_NO" />
                             <PropertyValue Property="Label" String="Invoice Number" />
                         </Record>
-                        <Record Type="UI.DataField">
+                        <!-- <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="INVOICE_AMOUNT" />
                             <PropertyValue Property="Label" String="Invoice Amount" />
-                        </Record>
+                        </Record> -->
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="PO_NUMBER" />
                             <PropertyValue Property="Label" String="Purchase Order" />
@@ -69,10 +69,10 @@
                             <PropertyValue Property="Value" Path="INVOICE_NO" />
                             <PropertyValue Property="Label" String="Invoice Number" />
                         </Record>
-                        <Record Type="UI.DataField">
+                        <!-- <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="INVOICE_AMOUNT" />
                             <PropertyValue Property="Label" String="Invoice Amount" />
-                        </Record>
+                        </Record> -->
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="PO_NUMBER" />
                             <PropertyValue Property="Label" String="Purchase Order" />
@@ -105,10 +105,10 @@
                             <PropertyValue Property="Value" Path="INVOICE_NO" />
                             <PropertyValue Property="Label" String="Invoice Number" />
                         </Record>
-                        <Record Type="UI.DataField">
+                        <!-- <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="INVOICE_AMOUNT" />
                             <PropertyValue Property="Label" String="Invoice Amount" />
-                        </Record>
+                        </Record> -->
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="PO_NUMBER" />
                             <PropertyValue Property="Label" String="Purchase Order" />

@@ -188,6 +188,23 @@
                             />
                         </m:HBox>
                     </m:VBox>
+
+                    <!-- Fourth COLUMN: Details -->
+                    <!-- visible="{= ${oHeaderModel>/results/0/SES_STATUS} === 'Approved'}" -->
+                    <m:VBox class="sapUiSmallMarginEnd sapUiSmallMarginBottom">
+                        <m:HBox
+                            class="sapUiTinyMarginBottom"
+                            visible="{= ${oHeaderModel>/results/0/Status} === 5}"
+                        >
+                            <m:Label
+                                text="Supplier Invoice Ref No:"
+                                class="sapUiTinyMarginEnd"
+                            />
+                            <m:Text
+                                text="{oOCRHeaderModel>/results/0/supplierInvoiceRefNo }"
+                            />
+                        </m:HBox>
+                    </m:VBox>
                 </m:FlexBox>
             </headerContent>
 
